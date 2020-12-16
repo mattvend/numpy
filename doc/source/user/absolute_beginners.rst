@@ -100,8 +100,8 @@ What’s the difference between a Python list and a NumPy array?
 NumPy gives you an enormous range of fast and efficient ways of creating arrays
 and manipulating numerical data inside them. While a Python list can contain
 different data types within a single list, all of the elements in a NumPy array
-should be homogenous. The mathematical operations that are meant to be performed
-on arrays would be extremely inefficient if the arrays weren't homogenous.
+should be homogeneous. The mathematical operations that are meant to be performed
+on arrays would be extremely inefficient if the arrays weren't homogeneous.
 
 **Why use NumPy?**
 
@@ -1090,7 +1090,7 @@ To learn more about finding the unique elements in an array, see `unique`.
 Transposing and reshaping a matrix
 ----------------------------------
 
-*This section covers* ``arr.reshape()``, ``arr.transpose()``, ``arr.T()``
+*This section covers* ``arr.reshape()``, ``arr.transpose()``, ``arr.T``
 
 -----
 
@@ -1114,7 +1114,7 @@ You simply need to pass in the new dimensions that you want for the matrix. ::
 
 .. image:: images/np_reshape.png
 
-You can also use ``.transpose`` to reverse or change the axes of an array
+You can also use ``.transpose()`` to reverse or change the axes of an array
 according to the values you specify.
 
 If you start with this array::
@@ -1131,6 +1131,13 @@ You can transpose your array with ``arr.transpose()``. ::
          [1, 4],
          [2, 5]])
 
+You can also use ``arr.T``::
+
+    >>> arr.T
+    array([[0, 3],
+           [1, 4],
+           [2, 5]])
+
 To learn more about transposing and reshaping arrays, see `transpose` and
 `reshape`.
 
@@ -1138,12 +1145,12 @@ To learn more about transposing and reshaping arrays, see `transpose` and
 How to reverse an array
 -----------------------
 
-*This section covers* ``np.flip``
+*This section covers* ``np.flip()``
 
 -----
 
 NumPy's ``np.flip()`` function allows you to flip, or reverse, the contents of
-an array along an axis. When using ``np.flip``, specify the array you would like
+an array along an axis. When using ``np.flip()``, specify the array you would like
 to reverse and the axis. If you don't specify the axis, NumPy will reverse the
 contents along all of the axes of your input array.
 
@@ -1531,19 +1538,19 @@ Importing and exporting a CSV
 -----------------------------
 
 .. save a csv
-   
+
    >>> with open('music.csv', 'w') as fid:
    ...     n = fid.write('Artist,Genre,Listeners,Plays\n')
    ...     n = fid.write('Billie Holiday,Jazz,1300000,27000000\n')
    ...     n = fid.write('Jimmie Hendrix,Rock,2700000,70000000\n')
    ...     n = fid.write('Miles Davis,Jazz,1500000,48000000\n')
    ...     n = fid.write('SIA,Pop,2000000,74000000\n')
-   
+
 
 
 It's simple to read in a CSV that contains existing information. The best and
 easiest way to do this is to use
-`Pandas <https://pandas.pydata.org/getpandas.html>`_. ::
+`Pandas <https://pandas.pydata.org>`_. ::
 
   >>> import pandas as pd
 
